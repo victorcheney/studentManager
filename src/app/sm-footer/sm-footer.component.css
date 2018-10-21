@@ -1,0 +1,12 @@
+.sm-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    padding-left: 60px;
+    background: #cccccc;
+    z-index: -1;
+    text-align: center;
+    line-height: 40px;
+}

@@ -1,0 +1,24 @@
+.sm-sider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    background: #262626;
+    padding-top: 50px;
+}
+
+.menu-item {
+    height: 50px;
+    color: #ADADAD;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+}
+.menu-item:hover {
+    background: #2A2D2E;
+}
+
+.menu-item.selected {
+    color: #FFFFFF;
+}

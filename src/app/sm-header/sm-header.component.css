@@ -1,0 +1,13 @@
+.sm-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    padding-left: 60px;
+    background: #cccccc;
+}
+.h-content {
+    padding: 0 10px;
+    line-height: 50px;
+}
