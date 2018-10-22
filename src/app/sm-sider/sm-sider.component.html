@@ -1,8 +1,18 @@
 <aside class="sm-sider">
-  <ul class="menu">
-    <li class="menu-item" *ngFor="let item of menus" 
-    (click)="onSelect(item.id)" [class.selected]="item.id === selectedMenu">
-      <span>{{ item.text }}</span>
-    </li>
-  </ul>
+  <div class="sm-sider-container">
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="">
+    </div>
+
+    <ul class="menu">
+      <li class="menu-item" *ngFor="let item of menus" (click)="onSelect(item.id)" [class.selected]="item.id === selectedMenu">
+        <fa name="{{ item.icon }}" size="lg"></fa>
+        <!-- <span>{{ item.icon }}</span> -->
+      </li>
+    </ul>
+
+    <div class="personal-center">
+      <fa name="user-circle-o" size="2x"></fa>
+    </div>
+  </div>
 </aside>

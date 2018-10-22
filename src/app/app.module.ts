@@ -7,6 +7,7 @@ import { SmSiderComponent } from './sm-sider/sm-sider.component';
 import { SmHeaderComponent } from './sm-header/sm-header.component';
 import { SmContentComponent } from './sm-content/sm-content.component';
 import { SmFooterComponent } from './sm-footer/sm-footer.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SmFooterComponent } from './sm-footer/sm-footer.component';
     SmFooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

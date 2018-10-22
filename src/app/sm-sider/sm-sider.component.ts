@@ -10,15 +10,18 @@ export class SmSiderComponent implements OnInit {
   menus = [
     { 
       id : 1,
-      text: '仪表盘'
+      text: '仪表盘',
+      icon: 'dashboard'
     },
     { 
       id : 2,
-      text: '信息库'
+      text: '信息库',
+      icon: 'vcard-o'
     },
     {
       id : 3,
-      text: 'TODO'
+      text: 'TODO',
+      icon: 'flag-o'
     }
   ];
 
