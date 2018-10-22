@@ -8,6 +8,7 @@ import { SmHeaderComponent } from './sm-header/sm-header.component';
 import { SmContentComponent } from './sm-content/sm-content.component';
 import { SmFooterComponent } from './sm-footer/sm-footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { DasboardComponent } from './dasboard/dasboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     SmSiderComponent,
     SmHeaderComponent,
     SmContentComponent,
-    SmFooterComponent
+    SmFooterComponent,
+    DasboardComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@
     padding-top: 50px;
 }
 .menu-item {
+    position: relative;
     height: 50px;
     color: #ADADAD;
     cursor: pointer;
@@ -23,6 +24,28 @@
 
 .menu-item.selected {
     color: #FFFFFF;
+}
+.menu-item-text {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 50px;
+    width: 0;
+    background: #262626;
+    text-align: left;
+    transition: all .3s;
+}
+
+.menu-item:hover .menu-item-text {
+    width: 120px;
+    background: #2A2D2E;
+}
+.menu-item .menu-item-text span {
+    opacity: 0;
+    transition: all .4s;
+}
+.menu-item:hover .menu-item-text span {
+    opacity: 1;
 }
 
 .personal-center {
