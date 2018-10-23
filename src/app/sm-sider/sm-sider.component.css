@@ -28,16 +28,17 @@
 .menu-item-text {
     position: absolute;
     top: 0;
-    left: 100%;
+    left: -100%;
     height: 50px;
-    width: 0;
+    width: 120px;
     background: #262626;
     text-align: left;
-    transition: all .3s;
+    transition: all .2s;
+    z-index: 0;
 }
 
 .menu-item:hover .menu-item-text {
-    width: 120px;
+    left: 100%;
     background: #2A2D2E;
 }
 .menu-item .menu-item-text span {
@@ -46,6 +47,20 @@
 }
 .menu-item:hover .menu-item-text span {
     opacity: 1;
+}
+
+.icon-con {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #262626;
+}
+
+.menu-item:hover .icon-con {
+    background: #2A2D2E;
 }
 
 .personal-center {
