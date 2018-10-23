@@ -6,6 +6,7 @@ import { InformationComponent } from './information/information.component';
 import { TodolistComponent } from './todolist/todolist.component'
 
 const routes: Routes = [
+  // 路由默认
   {
     path: '',
     redirectTo: '/dashboard',
