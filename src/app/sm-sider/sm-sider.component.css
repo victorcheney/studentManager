@@ -25,6 +25,11 @@
 .menu-item.selected {
     color: #FFFFFF;
 }
+
+.menu-item:focus {
+    outline: none;
+}
+
 .menu-item-text {
     position: absolute;
     top: 0;

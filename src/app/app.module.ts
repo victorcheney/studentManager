@@ -9,6 +9,9 @@ import { SmContentComponent } from './sm-content/sm-content.component';
 import { SmFooterComponent } from './sm-footer/sm-footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { DasboardComponent } from './dasboard/dasboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { InformationComponent } from './information/information.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { DasboardComponent } from './dasboard/dasboard.component';
     SmHeaderComponent,
     SmContentComponent,
     SmFooterComponent,
-    DasboardComponent
+    DasboardComponent,
+    InformationComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

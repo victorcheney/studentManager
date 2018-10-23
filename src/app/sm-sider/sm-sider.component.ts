@@ -11,17 +11,20 @@ export class SmSiderComponent implements OnInit {
     { 
       id : 1,
       text: '仪表盘',
-      icon: 'dashboard'
+      icon: 'dashboard',
+      path: '/dashboard'
     },
     { 
       id : 2,
       text: '信息库',
-      icon: 'vcard-o'
+      icon: 'vcard-o',
+      path: '/info'
     },
     {
       id : 3,
       text: 'TODO',
-      icon: 'flag-o'
+      icon: 'flag-o',
+      path: '/todolist'
     }
   ];
 

@@ -5,10 +5,10 @@
     </div>
 
     <ul class="menu">
-      <li class="menu-item" *ngFor="let item of menus" (click)="onSelect(item.id)" [class.selected]="item.id === selectedMenu">
+      <li class="menu-item" *ngFor="let item of menus" (click)="onSelect(item.id)"
+        [class.selected]="item.id === selectedMenu"  routerLink="/{{ item.path }}">
         <div class="icon-con">
-            <!-- <fa name="{{ item.icon }}" size="lg"></fa> -->
-            <i class="fa fa-{{ item.icon }} fa-lg"></i>
+            <fa name="{{ item.icon }}" size="lg"></fa>
         </div>
         <div class="menu-item-text">
           <span>{{ item.text }}</span>
