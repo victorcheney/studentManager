@@ -7,7 +7,8 @@
     <ul class="menu">
       <li class="menu-item" *ngFor="let item of menus" (click)="onSelect(item.id)" [class.selected]="item.id === selectedMenu">
         <div class="icon-con">
-            <fa name="{{ item.icon }}" size="lg"></fa>
+            <!-- <fa name="{{ item.icon }}" size="lg"></fa> -->
+            <i class="fa fa-{{ item.icon }} fa-lg"></i>
         </div>
         <div class="menu-item-text">
           <span>{{ item.text }}</span>
