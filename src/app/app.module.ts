@@ -12,6 +12,7 @@ import { DasboardComponent } from './dasboard/dasboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
 import { TodolistComponent } from './todolist/todolist.component';
+import { InfoDetailComponent } from './info-detail/info-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TodolistComponent } from './todolist/todolist.component';
     SmFooterComponent,
     DasboardComponent,
     InformationComponent,
-    TodolistComponent
+    TodolistComponent,
+    InfoDetailComponent
   ],
   imports: [
     BrowserModule,

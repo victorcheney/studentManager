@@ -1,0 +1,12 @@
+.infodetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    width: 800px;
+    min-height: 600px;
+    border: 1px solid #ddd;
+}

@@ -43,6 +43,10 @@
     color: #fff;
     padding: 5px;
 }
+.summary > p {
+    word-wrap : break-word;
+    width: 100%;
+}
 
 .list-item:hover .img-con img {
     width: 80px;
@@ -52,4 +56,7 @@
 }
 .list-item:hover .card .img-con {
     height: 100px;
+}
+.list-item:focus {
+    outline: none;
 }

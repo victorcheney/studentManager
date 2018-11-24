@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
+  infos = [{
+    name: '李铁柱',
+    summary: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+  },
+  {
+    name: '王二妞',
+    summary: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+  },
+  {
+    name: '张三',
+    summary: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+  }]
+
   constructor() { }
 
   ngOnInit() {
