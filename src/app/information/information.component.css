@@ -1,20 +1,22 @@
-.info-container {
+/* .info-container {
     padding: 20px 0;
-}
+} */
 
 .list-container {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 10px;
+    /* margin: 0 10px; */
 }
 
 .list-item {
     width: 15.25%;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     margin-bottom: 20px;
     cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 4px; 
 }
 
 .card {
@@ -24,7 +26,8 @@
     height: 240px;
     background: #ffffff0d;
 
-    border: 1px solid #dddddd3d;    
+    border: 1px solid #dddddd3d; 
+    overflow: hidden;   
 }
 
 .card .img-con {
@@ -40,8 +43,9 @@
 
 .summary {
     transition: all .3s;
-    color: #fff;
+    /* color: #fff; */
     padding: 5px;
+    height: 100px;
 }
 .summary > p {
     word-wrap : break-word;
@@ -53,10 +57,43 @@
     height: 80px;
     border-radius: 100%;
     margin: 10px 0 0 10px;
+    border: 1px solid #ddd;
 }
 .list-item:hover .card .img-con {
     height: 100px;
 }
 .list-item:focus {
     outline: none;
+}
+
+.hover-shadow-box-animation {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    margin: 10px;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+
+.hover-shadow-box-animation:hover,
+.hover-shadow-box-animation:focus,
+.hover-shadow-box-animation:active {
+    box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+    transform: scale(1.02);
+    /* border: 1px solid #d9d9d9; */
+}
+
+.operate {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.operate button {
+    margin: 0 5px;
+}
+
+.btn-bar {
+    overflow: hidden;
 }

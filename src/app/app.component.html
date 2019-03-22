@@ -1,16 +1,56 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-sm-layout>
-  <!-- 头部 -->
-  <app-sm-header></app-sm-header>
+<!-- <app-sm-layout> -->
+<!-- 头部 -->
+<!-- <app-sm-header></app-sm-header> -->
 
-  <!-- 侧边栏 -->
-  <app-sm-sider></app-sm-sider>
+<!-- 侧边栏 -->
+<!-- <app-sm-sider></app-sm-sider> -->
 
-  <!-- 主体 -->
-  <app-sm-content></app-sm-content>
+<!-- 主体 -->
+<!-- <app-sm-content></app-sm-content> -->
 
-  <!-- 底部 -->
-  <app-sm-footer></app-sm-footer>
-  
-</app-sm-layout>
+<!-- 底部 -->
+<!-- <app-sm-footer></app-sm-footer> -->
 
+<!-- </app-sm-layout> -->
+
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+    <div class="logo">
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu *ngFor="let item of menus">
+        <span title><i nz-icon type="{{ item.icon }}"></i><span class="nav-text">{{ item.name }}</span></span>
+        <ul *ngIf="item.children && item.children.length > 0" >
+          <li nz-menu-item *ngFor="let child of item.children" [routerLink]="[ child.path ]">{{ child.name }}</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i nz-icon type="team"></i><span class="nav-text">Team</span></span>
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-menu-item><span><i nz-icon type="file"></i><span class="nav-text">File</span></span></li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
+    </nz-header>
+    <nz-content style="margin:0 16px;">
+      <nz-breadcrumb style="margin:16px 0;">
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="container-tqd">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">©2019 Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+<ng-template #trigger>
+  <i nz-icon type="up"></i>
+</ng-template>

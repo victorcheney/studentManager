@@ -10,7 +10,7 @@ const routes: Routes = [
   // 路由默认
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   // 仪表盘

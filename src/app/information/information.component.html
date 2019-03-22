@@ -1,6 +1,12 @@
 <div class="info-container">
+
+  <div class="btn-bar">
+    <button style="float: right;" nz-button nzType="primary" (click)="showModal('ADD')"><i nz-icon
+        type="plus"></i>添加</button>
+  </div>
+
   <ul class="list-container">
-    <li class="list-item" *ngFor="let item of infos" routerLink="/infodetail">
+    <li class="list-item hover-shadow-box-animation" *ngFor="let item of infos">
       <div class="card">
         <div class="img-con">
           <img src="../../assets/timg.jpg" alt="">
@@ -9,7 +15,123 @@
           <h4>{{ item.name }}</h4>
           <p>{{ item.summary }}</p>
         </div>
+        <div class="operate">
+          <button nz-button nzType="primary" nzShape="circle" (click)="showModal('EDIT')"><i nz-icon
+              type="edit"></i></button>
+          <button nz-button nzType="default" nzShape="circle" (click)="showModal('VIEW')"><i nz-icon
+              type="eye"></i></button>
+        </div>
       </div>
     </li>
   </ul>
+
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="{{ modalTitle[operateType] }}" nzOkText="保存" nzCancelText="取消"
+    (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="isOkLoading">
+
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <!-- <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="email" id="email">
+          <nz-form-explain *ngIf="validateForm.get('email').dirty && validateForm.get('email').errors">The input is not
+            valid E-mail!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item> -->
+
+      <!-- 姓名 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">姓名</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['name']">
+          <input nz-input formControlName="name" id="name">
+          <!--  <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input is not
+            valid E-mail!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 性别 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="address">性别</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-radio-group formControlName="gender">
+            <label nz-radio nzValue="1">男</label>
+            <label nz-radio nzValue="2">女</label>
+          </nz-radio-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 出生日期 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="birdthday">出生日期</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-date-picker formControlName="birdthday"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <!-- 家庭住址 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="address">家庭住址</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="address" id="address">
+          <!--  <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input is not
+              valid E-mail!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 段位 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="segment">段位</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择段位" formControlName="segment">
+            <nz-option *ngFor="let item of segments; let i = index" nzLabel="{{ item }}" nzValue="{{ i }}"></nz-option>
+          </nz-select>
+
+          <!-- <input nz-input formControlName="name" id="name"> -->
+          <!--  <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input is not
+              valid E-mail!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 父/母姓名 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="parentName">父/母姓名</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="parentName" id="parentName">
+          <!--  <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input is not
+              valid E-mail!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 联系电话 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>联系电话</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']">
+          <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+            <ng-template #addOnBeforeTemplate>
+              <nz-select formControlName="phoneNumberPrefix" style="width: 70px;">
+                <nz-option nzLabel="+86" nzValue="+86"></nz-option>
+                <nz-option nzLabel="+87" nzValue="+87"></nz-option>
+              </nz-select>
+            </ng-template>
+            <input formControlName="phoneNumber" id="'phoneNumber'" nz-input>
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('phoneNumber').dirty && validateForm.get('phoneNumber').errors">
+            Please input your phone number!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 课程类型 -->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="course">课程类型</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择课程类型" formControlName="course">
+            <nz-option nzLabel="课程一" nzValue="jack"></nz-option>
+            <nz-option nzLabel="课程二" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="课程三" nzValue="tom"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+
+  </nz-modal>
 </div>

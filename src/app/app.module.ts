@@ -13,6 +13,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './information/information.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { InfoDetailComponent } from './info-detail/info-detail.component';
+import { NgZorroAntdModule, NZ_I18N, en_US, zh_CN } from 'ng-zorro-antd';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import zh from '@angular/common/locales/zh';
+import { ReactiveFormsModule } from '@angular/forms';
+
+registerLocaleData(zh);
 
 @NgModule({
   declarations: [
@@ -30,9 +40,14 @@ import { InfoDetailComponent } from './info-detail/info-detail.component';
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgZorroAntdModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
